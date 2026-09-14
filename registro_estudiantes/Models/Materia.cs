@@ -20,7 +20,7 @@ namespace registro_estudiantes.Models
         [StringLength(500)]
         public string? Descripcion { get; set; }
 
-        public bool Estado { get; set; } = true; // true = activo, false = inactivo
+        public bool Estado { get; set; } = true; 
 
         // Navegación
         public ICollection<Inscripcion> Inscripciones { get; set; } = new List<Inscripcion>();

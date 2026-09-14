@@ -10,9 +10,20 @@ namespace registro_estudiantes.Models
         [StringLength(100)]
         public string Nombre { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Los apellidos son obligatorios")]
-        [StringLength(150)]
-        public string Apellidos { get; set; } = string.Empty;
+        [Required(ErrorMessage = "El apellido paterno es obligatorio")]
+        [StringLength(100)]
+        [Display(Name = "Apellido Paterno")]
+        public string ApellidoPaterno { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "El apellido materno es obligatorio")]
+        [StringLength(100)]
+        [Display(Name = "Apellido Materno")]
+        public string ApellidoMaterno { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "El CI es obligatorio")]
+        [StringLength(20)]
+        [Display(Name = "Carnet de Identidad")]
+        public string CI { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "El email es obligatorio")]
         [EmailAddress]
@@ -21,6 +32,7 @@ namespace registro_estudiantes.Models
 
         [Required(ErrorMessage = "La matrícula es obligatoria")]
         [StringLength(20)]
+        [Display(Name = "Matrícula")]
         public string Matricula { get; set; } = string.Empty;
 
         public bool Estado { get; set; } = true; // true = activo, false = inactivo
