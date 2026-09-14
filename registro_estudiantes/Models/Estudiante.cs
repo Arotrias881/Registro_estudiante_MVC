@@ -35,7 +35,7 @@ namespace registro_estudiantes.Models
         [Display(Name = "Matrícula")]
         public string Matricula { get; set; } = string.Empty;
 
-        public bool Estado { get; set; } = true; // true = activo, false = inactivo
+        public bool Estado { get; set; } = true; 
 
         // Navegación
         public ICollection<Inscripcion> Inscripciones { get; set; } = new List<Inscripcion>();

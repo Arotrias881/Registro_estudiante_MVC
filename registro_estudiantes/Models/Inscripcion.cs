@@ -21,6 +21,8 @@ namespace registro_estudiantes.Models
 
         [Required(ErrorMessage = "La fecha de inscripción es obligatoria")]
         [DataType(DataType.Date)]
+        [Display(Name = "Fecha de Inscripción")]
+        [FechaNoFutura(ErrorMessage = "La fecha de inscripción no puede ser futura")]
         public DateTime FechaInscripcion { get; set; } = DateTime.Now;
 
         [Required]
@@ -32,5 +34,16 @@ namespace registro_estudiantes.Models
         // Navegación
         public Estudiante? Estudiante { get; set; }
         public Materia? Materia { get; set; }
+    }
+
+    // Validación personalizada: la fecha no puede ser mayor a hoy
+    public class FechaNoFuturaAttribute : ValidationAttribute
+    {
+        public override bool IsValid(object? value)
+        {
+            if (value is DateTime fecha)
+                return fecha.Date <= DateTime.Today;
+            return true;
+        }
     }
 }
