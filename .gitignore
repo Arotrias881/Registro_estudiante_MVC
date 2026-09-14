@@ -1,0 +1,28 @@
+## .NET / ASP.NET Core
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+bin/
+obj/
+out/
+
+## NuGet
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Logs
+*.log
+logs/
+
+## Secrets / config sensibles
+appsettings.Development.json
+secrets.json
+
+## OS
+Thumbs.db
+.DS_Store
